@@ -235,51 +235,55 @@ def load_gazebo_models(table_pose=Pose(position=Point(x=1.35, y=-0.09, z=-0.1)),
                        brick5_reference_frame="world",
                        brick6_pose=Pose(position=Point(x=0.510, y=-0.7325, z=0.7)), # brick 6 HA5
                        brick6_reference_frame="world",
-                       brick7_pose=Pose(position=Point(x=0.6050, y=-0.59, z=0.7),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 7 HB0
-                       brick7_reference_frame="world",
-                       brick8_pose=Pose(position=Point(x=0.5125, y=-0.200, z=0.7),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)),
+                       # brick7_pose=Pose(position=Point(x=0.6050, y=-0.59, z=0.7),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 7 HA6
+                       # brick7_reference_frame="world",
+                       brick8_pose=Pose(position=Point(x=0.5125, y=-0.200, z=0.7),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 8 HB0
                        brick8_reference_frame="world",
-                       brick9_pose=Pose(position=Point(x=0.6100, y=-0.0575, z=0.7)),
+                       brick9_pose=Pose(position=Point(x=0.6100, y=-0.0575, z=0.7)), # brick 9 HB1
                        brick9_reference_frame="world",
-                       brick10_pose=Pose(position=Point(x=0.820, y=-0.0575, z=0.7),), # brick 10 HB3
+                       brick10_pose=Pose(position=Point(x=0.820, y=-0.0575, z=0.7),), # brick 10 HB2
                        brick10_reference_frame="world",
-                       brick11_pose=Pose(position=Point(x=0.8175, y=-0.200, z=0.7),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 11 HB4
+                       brick11_pose=Pose(position=Point(x=0.8175, y=-0.200, z=0.7),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 11 HB3
                        brick11_reference_frame="world",
-                       brick12_pose=Pose(position=Point(x=0.8200, y=-0.3425, z=0.7)), # brick 12 HB5
+                       brick12_pose=Pose(position=Point(x=0.8200, y=-0.3425, z=0.7)), # brick 12 HB4
                        brick12_reference_frame="world",
-                       brick13_pose=Pose(position=Point(x=0.6100, y=-0.3425, z=0.7)),
+                       brick13_pose=Pose(position=Point(x=0.6100, y=-0.3425, z=0.7)), # brick 13 HB5
                        brick13_reference_frame="world",
-                       brick14_pose=Pose(position=Point(x=0.7050, y=-0.2000, z=0.7),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 14 MA1
-                       brick14_reference_frame="world",
+                       # brick14_pose=Pose(position=Point(x=0.7050, y=-0.2000, z=0.7),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 14 HB6
+                       # brick14_reference_frame="world",
                        # Minute Hand
-                       brick15_pose=Pose(position=Point(x=0.5125, y=0.200, z=0.7),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 15 MA2
+                       brick15_pose=Pose(position=Point(x=0.5125, y=0.200, z=0.7),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 15 MA0
                        brick15_reference_frame="world",
-                       brick16_pose=Pose(position=Point(x=0.6100, y=0.3425, z=0.7)),
+                       brick16_pose=Pose(position=Point(x=0.6100, y=0.3425, z=0.7)), # brick 16 MA1
                        brick16_reference_frame="world",
-                       brick17_pose=Pose(position=Point(x=0.820, y=0.3425, z=0.7)), # brick 17 MA4
+                       brick17_pose=Pose(position=Point(x=0.820, y=0.3425, z=0.7)), # brick 17 MA2
                        brick17_reference_frame="world",
-                       brick18_pose=Pose(position=Point(x=0.8175, y=0.200, z=0.7),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 18 MA5
+                       brick18_pose=Pose(position=Point(x=0.8175, y=0.200, z=0.7),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 18 MA3
                        brick18_reference_frame="world",
-                       brick19_pose=Pose(position=Point(x=0.8200, y=0.05750, z=0.7)), # brick 19 MB0
+                       brick19_pose=Pose(position=Point(x=0.8200, y=0.05750, z=0.7)), # brick 19 MA4
                        brick19_reference_frame="world",
-                       brick20_pose=Pose(position=Point(x=0.6100, y=0.0575, z=0.7)), # brick 20 MB1
+                       brick20_pose=Pose(position=Point(x=0.6100, y=0.0575, z=0.7)), # brick 20 MA5
                        brick20_reference_frame="world",
-                       brick21_pose=Pose(position=Point(x=0.7050, y=0.2000, z=0.7),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 21 MB2
-                       brick21_reference_frame="world",
-                       brick22_pose=Pose(position=Point(x=0.4125, y=0.590, z=0.7),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 22 MB3
+                       # brick21_pose=Pose(position=Point(x=0.7050, y=0.2000, z=0.7),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 21 MA6
+                       # brick21_reference_frame="world",
+                       brick22_pose=Pose(position=Point(x=0.4125, y=0.590, z=0.7),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 22 MB0
                        brick22_reference_frame="world",
-                       brick23_pose=Pose(position=Point(x=0.5100, y=0.7325, z=0.7)), # brick 23 MB4
+                       brick23_pose=Pose(position=Point(x=0.5100, y=0.7325, z=0.7)), # brick 23 MB1
                        brick23_reference_frame="world",
-                       brick24_pose=Pose(position=Point(x=0.7200, y=0.7325, z=0.7)), # brick 24 MB5
+                       brick24_pose=Pose(position=Point(x=0.7200, y=0.7325, z=0.7)), # brick 24 MB2
                        brick24_reference_frame="world",
-                       brick25_pose=Pose(position=Point(x=0.7175, y=0.5900, z=0.7),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 25 MS0
+                       brick25_pose=Pose(position=Point(x=0.7175, y=0.5900, z=0.7),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 25 MB3
                        brick25_reference_frame="world",
-                       brick26_pose=Pose(position=Point(x=0.7200, y=0.4475, z=0.7)), # brick 26 MS1
+                       brick26_pose=Pose(position=Point(x=0.7200, y=0.4475, z=0.7)), # brick 26 MB4
                        brick26_reference_frame="world",
-                       brick27_pose=Pose(position=Point(x=0.5100, y=0.4475, z=0.7)), # brick 26 MS1
+                       brick27_pose=Pose(position=Point(x=0.5100, y=0.4475, z=0.7)), # brick 27 MB5
                        brick27_reference_frame="world",
-                       brick28_pose=Pose(position=Point(x=0.6050, y=0.5900, z=0.7),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 26 MS1
-                       brick28_reference_frame="world"):
+                       # brick28_pose=Pose(position=Point(x=0.6050, y=0.5900, z=0.7),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 28 MB6
+                       # brick28_reference_frame="world",
+                       brick29_pose=Pose(position=Point(x=0.270, y=0.5975, z=0.7)), # brick 29 MS0
+                       brick29_reference_frame="world",
+                       brick30_pose=Pose(position=Point(x=0.270, y=0.7025, z=0.7)), # brick 30 MS1
+                       brick30_reference_frame="world",):
 
     # Get Models' Path
     model_path = rospkg.RosPack().get_path('baxter_sim_examples')+"/models/"
@@ -312,9 +316,9 @@ def load_gazebo_models(table_pose=Pose(position=Point(x=1.35, y=-0.09, z=-0.1)),
     with open (model_path + "new_brick/model.sdf", "r") as brick6_file:
         brick6_xml=brick6_file.read().replace('\n', '')
     # Load Brick7 SDF
-    brick7_xml = ''
-    with open (model_path + "new_brick/model.sdf", "r") as brick7_file:
-        brick7_xml=brick7_file.read().replace('\n', '')
+    # brick7_xml = ''
+    # with open (model_path + "new_brick/model.sdf", "r") as brick7_file:
+    #     brick7_xml=brick7_file.read().replace('\n', '')
     # Load Brick8 SDF
     brick8_xml = ''
     with open (model_path + "new_brick/model.sdf", "r") as brick8_file:
@@ -340,9 +344,9 @@ def load_gazebo_models(table_pose=Pose(position=Point(x=1.35, y=-0.09, z=-0.1)),
     with open (model_path + "new_brick/model.sdf", "r") as brick13_file:
         brick13_xml=brick13_file.read().replace('\n', '')
     # Load Brick14 SDF
-    brick14_xml = ''
-    with open (model_path + "new_brick/model.sdf", "r") as brick14_file:
-        brick14_xml=brick14_file.read().replace('\n', '')
+    # brick14_xml = ''
+    # with open (model_path + "new_brick/model.sdf", "r") as brick14_file:
+    #     brick14_xml=brick14_file.read().replace('\n', '')
     # Load Brick15 SDF
     brick15_xml = ''
     with open (model_path + "new_brick/model.sdf", "r") as brick15_file:
@@ -368,9 +372,9 @@ def load_gazebo_models(table_pose=Pose(position=Point(x=1.35, y=-0.09, z=-0.1)),
     with open (model_path + "new_brick/model.sdf", "r") as brick20_file:
         brick20_xml=brick20_file.read().replace('\n', '')
     # Load Brick21 SDF
-    brick21_xml = ''
-    with open (model_path + "new_brick/model.sdf", "r") as brick21_file:
-        brick21_xml=brick21_file.read().replace('\n', '')
+    # brick21_xml = ''
+    # with open (model_path + "new_brick/model.sdf", "r") as brick21_file:
+    #     brick21_xml=brick21_file.read().replace('\n', '')
     # Load Brick22 SDF
     brick22_xml = ''
     with open (model_path + "new_brick/model.sdf", "r") as brick22_file:
@@ -396,9 +400,17 @@ def load_gazebo_models(table_pose=Pose(position=Point(x=1.35, y=-0.09, z=-0.1)),
     with open (model_path + "new_brick/model.sdf", "r") as brick27_file:
         brick27_xml=brick27_file.read().replace('\n', '')
     # Load Brick28 SDF
-    brick28_xml = ''
-    with open (model_path + "new_brick/model.sdf", "r") as brick28_file:
-        brick28_xml=brick28_file.read().replace('\n', '')
+    # brick28_xml = ''
+    # with open (model_path + "new_brick/model.sdf", "r") as brick28_file:
+    #     brick28_xml=brick28_file.read().replace('\n', '')
+    # Load Brick29 SDF
+    brick29_xml = ''
+    with open (model_path + "new_brick/model.sdf", "r") as brick29_file:
+        brick29_xml=brick29_file.read().replace('\n', '')
+    # Load Brick28 SDF
+    brick30_xml = ''
+    with open (model_path + "new_brick/model.sdf", "r") as brick30_file:
+        brick30_xml=brick30_file.read().replace('\n', '')
 
 
     # Spawn Table SDF
@@ -457,14 +469,14 @@ def load_gazebo_models(table_pose=Pose(position=Point(x=1.35, y=-0.09, z=-0.1)),
                                brick6_pose, brick6_reference_frame)
     except rospy.ServiceException, e:
         rospy.logerr("Spawn SDF service call failed: {0}".format(e))
-    # Spawn Brick7 SDF
-    rospy.wait_for_service('/gazebo/spawn_sdf_model')
-    try:
-        spawn_brick7 = rospy.ServiceProxy('/gazebo/spawn_sdf_model', SpawnModel)
-        resp_brick7 = spawn_sdf("brick7", brick7_xml, "/",
-                               brick7_pose, brick7_reference_frame)
-    except rospy.ServiceException, e:
-        rospy.logerr("Spawn SDF service call failed: {0}".format(e))
+    # # Spawn Brick7 SDF
+    # rospy.wait_for_service('/gazebo/spawn_sdf_model')
+    # try:
+    #     spawn_brick7 = rospy.ServiceProxy('/gazebo/spawn_sdf_model', SpawnModel)
+    #     resp_brick7 = spawn_sdf("brick7", brick7_xml, "/",
+    #                            brick7_pose, brick7_reference_frame)
+    # except rospy.ServiceException, e:
+    #     rospy.logerr("Spawn SDF service call failed: {0}".format(e))
     # Spawn Brick8 SDF
     rospy.wait_for_service('/gazebo/spawn_sdf_model')
     try:
@@ -514,13 +526,13 @@ def load_gazebo_models(table_pose=Pose(position=Point(x=1.35, y=-0.09, z=-0.1)),
     except rospy.ServiceException, e:
         rospy.logerr("Spawn SDF service call failed: {0}".format(e))
     # Spawn Brick14 SDF
-    rospy.wait_for_service('/gazebo/spawn_sdf_model')
-    try:
-        spawn_brick14 = rospy.ServiceProxy('/gazebo/spawn_sdf_model', SpawnModel)
-        resp_brick14 = spawn_sdf("brick14", brick14_xml, "/",
-                               brick14_pose, brick14_reference_frame)
-    except rospy.ServiceException, e:
-        rospy.logerr("Spawn SDF service call failed: {0}".format(e))
+    # rospy.wait_for_service('/gazebo/spawn_sdf_model')
+    # try:
+    #     spawn_brick14 = rospy.ServiceProxy('/gazebo/spawn_sdf_model', SpawnModel)
+    #     resp_brick14 = spawn_sdf("brick14", brick14_xml, "/",
+    #                            brick14_pose, brick14_reference_frame)
+    # except rospy.ServiceException, e:
+    #     rospy.logerr("Spawn SDF service call failed: {0}".format(e))
     # Spawn Brick15 SDF
     rospy.wait_for_service('/gazebo/spawn_sdf_model')
     try:
@@ -570,13 +582,13 @@ def load_gazebo_models(table_pose=Pose(position=Point(x=1.35, y=-0.09, z=-0.1)),
     except rospy.ServiceException, e:
         rospy.logerr("Spawn SDF service call failed: {0}".format(e))
     # Spawn Brick21 SDF
-    rospy.wait_for_service('/gazebo/spawn_sdf_model')
-    try:
-        spawn_brick21 = rospy.ServiceProxy('/gazebo/spawn_sdf_model', SpawnModel)
-        resp_brick21 = spawn_sdf("brick21", brick21_xml, "/",
-                               brick21_pose, brick21_reference_frame)
-    except rospy.ServiceException, e:
-        rospy.logerr("Spawn SDF service call failed: {0}".format(e))
+    # rospy.wait_for_service('/gazebo/spawn_sdf_model')
+    # try:
+    #     spawn_brick21 = rospy.ServiceProxy('/gazebo/spawn_sdf_model', SpawnModel)
+    #     resp_brick21 = spawn_sdf("brick21", brick21_xml, "/",
+    #                            brick21_pose, brick21_reference_frame)
+    # except rospy.ServiceException, e:
+    #     rospy.logerr("Spawn SDF service call failed: {0}".format(e))
     # Spawn Brick22 SDF
     rospy.wait_for_service('/gazebo/spawn_sdf_model')
     try:
@@ -617,7 +629,7 @@ def load_gazebo_models(table_pose=Pose(position=Point(x=1.35, y=-0.09, z=-0.1)),
                                brick26_pose, brick26_reference_frame)
     except rospy.ServiceException, e:
         rospy.logerr("Spawn SDF service call failed: {0}".format(e))
-    # Spawn Brick26 SDF
+    # Spawn Brick27 SDF
     rospy.wait_for_service('/gazebo/spawn_sdf_model')
     try:
         spawn_brick27 = rospy.ServiceProxy('/gazebo/spawn_sdf_model', SpawnModel)
@@ -625,12 +637,28 @@ def load_gazebo_models(table_pose=Pose(position=Point(x=1.35, y=-0.09, z=-0.1)),
                                brick27_pose, brick27_reference_frame)
     except rospy.ServiceException, e:
         rospy.logerr("Spawn SDF service call failed: {0}".format(e))
-    # Spawn Brick26 SDF
+    # Spawn Brick28 SDF
+    # rospy.wait_for_service('/gazebo/spawn_sdf_model')
+    # try:
+    #     spawn_brick28 = rospy.ServiceProxy('/gazebo/spawn_sdf_model', SpawnModel)
+    #     resp_brick28 = spawn_sdf("brick28", brick28_xml, "/",
+    #                            brick28_pose, brick28_reference_frame)
+    # except rospy.ServiceException, e:
+    #     rospy.logerr("Spawn SDF service call failed: {0}".format(e))
+    # Spawn Brick29 SDF
     rospy.wait_for_service('/gazebo/spawn_sdf_model')
     try:
-        spawn_brick28 = rospy.ServiceProxy('/gazebo/spawn_sdf_model', SpawnModel)
-        resp_brick28 = spawn_sdf("brick28", brick28_xml, "/",
-                               brick28_pose, brick28_reference_frame)
+        spawn_brick29 = rospy.ServiceProxy('/gazebo/spawn_sdf_model', SpawnModel)
+        resp_brick29 = spawn_sdf("brick29", brick29_xml, "/",
+                               brick29_pose, brick29_reference_frame)
+    except rospy.ServiceException, e:
+        rospy.logerr("Spawn SDF service call failed: {0}".format(e))
+    # Spawn Brick30 SDF
+    rospy.wait_for_service('/gazebo/spawn_sdf_model')
+    try:
+        spawn_brick30 = rospy.ServiceProxy('/gazebo/spawn_sdf_model', SpawnModel)
+        resp_brick30 = spawn_sdf("brick30", brick30_xml, "/",
+                               brick30_pose, brick30_reference_frame)
     except rospy.ServiceException, e:
         rospy.logerr("Spawn SDF service call failed: {0}".format(e))
 
@@ -649,28 +677,30 @@ def delete_gazebo_models():
         resp_delete = delete_model("brick4")
         resp_delete = delete_model("brick5")
         resp_delete = delete_model("brick6")
-        resp_delete = delete_model("brick7")
+        # resp_delete = delete_model("brick7")
         resp_delete = delete_model("brick8")
         resp_delete = delete_model("brick9")
         resp_delete = delete_model("brick10")
         resp_delete = delete_model("brick11")
         resp_delete = delete_model("brick12")
         resp_delete = delete_model("brick13")
-        resp_delete = delete_model("brick14")
+        # resp_delete = delete_model("brick14")
         resp_delete = delete_model("brick15")
         resp_delete = delete_model("brick16")
         resp_delete = delete_model("brick17")
         resp_delete = delete_model("brick18")
         resp_delete = delete_model("brick19")
         resp_delete = delete_model("brick20")
-        resp_delete = delete_model("brick21")
+        # resp_delete = delete_model("brick21")
         resp_delete = delete_model("brick22")
         resp_delete = delete_model("brick23")
         resp_delete = delete_model("brick24")
         resp_delete = delete_model("brick25")
         resp_delete = delete_model("brick26")
         resp_delete = delete_model("brick27")
-        resp_delete = delete_model("brick28")
+        # resp_delete = delete_model("brick28")
+        resp_delete = delete_model("brick29")
+        resp_delete = delete_model("brick30")
     except rospy.ServiceException, e:
         rospy.loginfo("Delete Model service call failed: {0}".format(e))
 
@@ -755,7 +785,7 @@ def move_brick (side, brick_position, pickUp):
           pnpR.place(block_posesR[-1])
 
 
-def change_bricks (side, BricksIncoming,BricksOutgoing,Hstore,Mstore,Digit):   #unifinished
+def change_bricks (side, BricksIncoming,BricksOutgoing,Hstore,Mstore,Digit):
     global PrefixList
 
 
@@ -837,7 +867,7 @@ def initial_bricks():
                 'HS6':(60,-602.5,0),
                 'HS7':(60,-707.5,0),
                 'HS8':(60,-812.5,0),
-                #Minuet Digit 1
+                #Minute Digit 1
                 'MA0':(512.5,200,1),
                 'MA1':(610,342.5,0),
                 'MA2':(820,342.5,0),
@@ -845,7 +875,7 @@ def initial_bricks():
                 'MA4':(820,57.5,0),
                 'MA5':(610,57.5,0),
                 'MA6':(705,200,1),
-                #Minuet Digit 2
+                #Minute Digit 2
                 'MB0':(412.5,590,1),
                 'MB1':(510,732.5,0),
                 'MB2':(720,732.5,0),
@@ -853,16 +883,16 @@ def initial_bricks():
                 'MB4':(720,447.5,0),
                 'MB5':(510,447.5,0),
                 'MB6':(605,590,1),
-                #Minuet Digit Store
-                'MS0':(270,497.5,0),
-                'MS1':(270,602.5,0),
-                'MS2':(270,707.5,0),
-                'MS3':(270,812.5,0),
-                'MS4':(270,917.5,0),
-                'MS5':(60,497.5,0),
-                'MS6':(60,602.5,0),
-                'MS7':(60,707.5,0),
-                'MS8':(60,812.5,0)}
+                #Minute Digit Store
+                'MS0':(270,597.5,0),
+                'MS1':(270,702.5,0),
+                'MS2':(270,807.5,0),
+                'MS3':(270,912.5,0),
+                'MS4':(270,1017.5,0),
+                'MS5':(60,597.5,0),
+                'MS6':(60,702.5,0),
+                'MS7':(60,807.5,0),
+                'MS8':(60,912.5,0)}
 
 #'FromTo':((To Go),(To Come))
     SwapDictionary = {'00':([],[]),     #<------This has been added since last test. Please make sure it is in the code.
