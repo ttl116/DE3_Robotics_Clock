@@ -289,7 +289,7 @@ def load_gazebo_models(table_pose=Pose(position=Point(x=1.35, y=-0.09, z=-0.1)),
     model_path = rospkg.RosPack().get_path('baxter_sim_examples')+"/models/"
     # Load Table SDF
     table_xml = ''
-    with open (model_path + "tables/model.sdf", "r") as table_file:
+    with open (model_path + "tables_newnew/model.sdf", "r") as table_file:
         table_xml=table_file.read().replace('\n', '')
     # Load Brick1 SDF
     brick1_xml = ''
@@ -646,21 +646,21 @@ def load_gazebo_models(table_pose=Pose(position=Point(x=1.35, y=-0.09, z=-0.1)),
     # except rospy.ServiceException, e:
     #     rospy.logerr("Spawn SDF service call failed: {0}".format(e))
     # Spawn Brick29 SDF
-    rospy.wait_for_service('/gazebo/spawn_sdf_model')
-    try:
-        spawn_brick29 = rospy.ServiceProxy('/gazebo/spawn_sdf_model', SpawnModel)
-        resp_brick29 = spawn_sdf("brick29", brick29_xml, "/",
-                               brick29_pose, brick29_reference_frame)
-    except rospy.ServiceException, e:
-        rospy.logerr("Spawn SDF service call failed: {0}".format(e))
-    # Spawn Brick30 SDF
-    rospy.wait_for_service('/gazebo/spawn_sdf_model')
-    try:
-        spawn_brick30 = rospy.ServiceProxy('/gazebo/spawn_sdf_model', SpawnModel)
-        resp_brick30 = spawn_sdf("brick30", brick30_xml, "/",
-                               brick30_pose, brick30_reference_frame)
-    except rospy.ServiceException, e:
-        rospy.logerr("Spawn SDF service call failed: {0}".format(e))
+    # rospy.wait_for_service('/gazebo/spawn_sdf_model')
+    # try:
+    #     spawn_brick29 = rospy.ServiceProxy('/gazebo/spawn_sdf_model', SpawnModel)
+    #     resp_brick29 = spawn_sdf("brick29", brick29_xml, "/",
+    #                            brick29_pose, brick29_reference_frame)
+    # except rospy.ServiceException, e:
+    #     rospy.logerr("Spawn SDF service call failed: {0}".format(e))
+    # # Spawn Brick30 SDF
+    # rospy.wait_for_service('/gazebo/spawn_sdf_model')
+    # try:
+    #     spawn_brick30 = rospy.ServiceProxy('/gazebo/spawn_sdf_model', SpawnModel)
+    #     resp_brick30 = spawn_sdf("brick30", brick30_xml, "/",
+    #                            brick30_pose, brick30_reference_frame)
+    # except rospy.ServiceException, e:
+    #     rospy.logerr("Spawn SDF service call failed: {0}".format(e))
 
 
 def delete_gazebo_models():
@@ -732,7 +732,8 @@ def pick_and_place_left_threaded ():
     global block_poses
     Display = "00"
     while not rospy.is_shutdown():
-      Time = time.ctime()[11:13]
+      # Time = time.ctime()[14:16]
+      Time = "01" # to test
       if Time != Display: 
         Display = Time_change(LEFT, Display,Time) 
     return 0
@@ -743,7 +744,8 @@ def pick_and_place_right_threaded ():
     global block_posesR
     Display = "00"
     while not rospy.is_shutdown():
-      Time = time.ctime()[14:16]
+      # Time = time.ctime()[11:13]
+      Time = "00" # to test
       if Time != Display: 
         Display = Time_change(RIGHT, Display,Time)
     return 0
@@ -765,10 +767,10 @@ def move_brick (side, brick_position, pickUp):
             block_poses.append(Pose(
                 position=Point(x=(BrickPlaces[brick_position][0]*0.001), y=(BrickPlaces[brick_position][1]*0.001), z=0.05),        
                 orientation=Quaternion(x=overhead_orientation2[0],y=overhead_orientation2[1],z=overhead_orientation2[2],w=overhead_orientation2[3])))               
-#         if pickUp:
-#           pnp.pick(block_poses[-1])
-#         else:
-#           pnp.place(block_poses[-1])
+        if pickUp:
+          pnp.pick(block_poses[-1])
+        else:
+          pnp.place(block_poses[-1])
     else:
         print ("add brick RIGHT, brick_position: " + str(brick_position) + " " + ("picking" if pickUp else "placing"))
         if BrickPlaces[brick_position][2] == 0:
@@ -779,10 +781,10 @@ def move_brick (side, brick_position, pickUp):
             block_posesR.append(Pose(
                 position=Point(x=(BrickPlaces[brick_position][0]*0.001), y=(BrickPlaces[brick_position][1]*0.001), z=0.05),        
                 orientation=Quaternion(x=overhead_orientation2[0],y=overhead_orientation2[1],z=overhead_orientation2[2],w=overhead_orientation2[3])))   
-#         if pickUp:
-#           pnpR.pick(block_posesR[-1])
-#         else:
-#           pnpR.place(block_posesR[-1])
+        if pickUp:
+          pnpR.pick(block_posesR[-1])
+        else:
+          pnpR.place(block_posesR[-1])
 
 
 def change_bricks (side, BricksIncoming,BricksOutgoing,Hstore,Mstore,Digit):
@@ -793,7 +795,7 @@ def change_bricks (side, BricksIncoming,BricksOutgoing,Hstore,Mstore,Digit):
 
     Store = Mstore
     StorePrefix = 'MS'
-    if side == LEFT:
+    if side == RIGHT:
         Store = Hstore
         StorePrefix = 'HS'
         Digit += 2
@@ -815,12 +817,12 @@ def change_bricks (side, BricksIncoming,BricksOutgoing,Hstore,Mstore,Digit):
     #While want to get rid of bricks
     while BricksOutgoing != []: 
         brick_position = PrefixList[Digit]+str(BricksOutgoing.pop())  #Pick Brick to go
-        move_brick(side, brick_position, PICKUP)        
+        move_brick(side, brick_position, PICKUP)
         Store += 1
         brick_position = StorePrefix+str(Store) #Put it in storage
         move_brick(side, brick_position, PUTDOWN)
         #Put it in the store
-    if side == LEFT:
+    if side == RIGHT:
         return (Store, Mstore)
     else:
         return (Hstore, Store)
@@ -1014,6 +1016,7 @@ def main():
                              'left_s0': 0.75142667,
                              'left_s1': -1.08935144}
     pnp = PickAndPlace(limb, hover_distance)
+    print ("Left limb picking up")
     # An orientation for gripper fingers to be overhead and parallel to the obj
     overhead_orientation = Quaternion(
                              x=-0.0249590815779,
@@ -1056,6 +1059,7 @@ def main():
                              'right_s1': -1.6393228}
 
     pnpR = PickAndPlace(limbR, hover_distance)
+    print ("Right limb picking up")
     # An orientation for gripper fingers to be overhead and parallel to the obj
 
     #####################
