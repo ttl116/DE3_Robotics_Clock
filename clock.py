@@ -732,7 +732,7 @@ def pick_and_place_left_threaded ():
     global block_poses
     Display = "00"
     while not rospy.is_shutdown():
-      Time = time.ctime()[11:13]
+      Time = "01" #time.ctime()[11:13]
       if Time != Display: 
         Display = Time_change(LEFT, Display,Time) 
     return 0
@@ -743,7 +743,7 @@ def pick_and_place_right_threaded ():
     global block_posesR
     Display = "00"
     while not rospy.is_shutdown():
-      Time = time.ctime()[14:16]
+      Time = "00" #time.ctime()[14:16]
       if Time != Display: 
         Display = Time_change(RIGHT, Display,Time)
     return 0
