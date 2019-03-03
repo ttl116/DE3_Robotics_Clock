@@ -229,7 +229,7 @@ def load_gazebo_models(table_pose=Pose(position=Point(x=1.35, y=-0.09, z=-0.1)),
                        brick2_reference_frame="world",
                        brick3_pose=Pose(position=Point(x=0.720, y=-0.4475, z=0.7)), # brick 3 HA2
                        brick3_reference_frame="world",
-                       brick4_pose=Pose(position=Point(x=0.7175, y=-0.590, z=0.7),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 4 HA3
+                       brick4_pose=Pose(position=Point(x=0.8175, y=-0.590, z=0.7),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 4 HA3
                        brick4_reference_frame="world",
                        brick5_pose=Pose(position=Point(x=0.720, y=-0.7325, z=0.7)), # brick 5 HA4
                        brick5_reference_frame="world",
@@ -243,7 +243,7 @@ def load_gazebo_models(table_pose=Pose(position=Point(x=1.35, y=-0.09, z=-0.1)),
                        brick9_reference_frame="world",
                        brick10_pose=Pose(position=Point(x=0.820, y=-0.0575, z=0.7),), # brick 10 HB2
                        brick10_reference_frame="world",
-                       brick11_pose=Pose(position=Point(x=0.8175, y=-0.200, z=0.7),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 11 HB3
+                       brick11_pose=Pose(position=Point(x=0.9175, y=-0.200, z=0.7),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 11 HB3
                        brick11_reference_frame="world",
                        brick12_pose=Pose(position=Point(x=0.8200, y=-0.3425, z=0.7)), # brick 12 HB4
                        brick12_reference_frame="world",
@@ -258,7 +258,7 @@ def load_gazebo_models(table_pose=Pose(position=Point(x=1.35, y=-0.09, z=-0.1)),
                        brick16_reference_frame="world",
                        brick17_pose=Pose(position=Point(x=0.820, y=0.3425, z=0.7)), # brick 17 MA2
                        brick17_reference_frame="world",
-                       brick18_pose=Pose(position=Point(x=0.8175, y=0.200, z=0.7),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 18 MA3
+                       brick18_pose=Pose(position=Point(x=0.9175, y=0.200, z=0.7),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 18 MA3
                        brick18_reference_frame="world",
                        brick19_pose=Pose(position=Point(x=0.8200, y=0.05750, z=0.7)), # brick 19 MA4
                        brick19_reference_frame="world",
@@ -272,7 +272,7 @@ def load_gazebo_models(table_pose=Pose(position=Point(x=1.35, y=-0.09, z=-0.1)),
                        brick23_reference_frame="world",
                        brick24_pose=Pose(position=Point(x=0.7200, y=0.7325, z=0.7)), # brick 24 MB2
                        brick24_reference_frame="world",
-                       brick25_pose=Pose(position=Point(x=0.7175, y=0.5900, z=0.7),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 25 MB3
+                       brick25_pose=Pose(position=Point(x=0.8175, y=0.5900, z=0.7),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 25 MB3
                        brick25_reference_frame="world",
                        brick26_pose=Pose(position=Point(x=0.7200, y=0.4475, z=0.7)), # brick 26 MB4
                        brick26_reference_frame="world",
@@ -289,7 +289,7 @@ def load_gazebo_models(table_pose=Pose(position=Point(x=1.35, y=-0.09, z=-0.1)),
     model_path = rospkg.RosPack().get_path('baxter_sim_examples')+"/models/"
     # Load Table SDF
     table_xml = ''
-    with open (model_path + "tables/model.sdf", "r") as table_file:
+    with open (model_path + "tables_newnew/model.sdf", "r") as table_file:
         table_xml=table_file.read().replace('\n', '')
     # Load Brick1 SDF
     brick1_xml = ''
@@ -646,21 +646,21 @@ def load_gazebo_models(table_pose=Pose(position=Point(x=1.35, y=-0.09, z=-0.1)),
     # except rospy.ServiceException, e:
     #     rospy.logerr("Spawn SDF service call failed: {0}".format(e))
     # Spawn Brick29 SDF
-    rospy.wait_for_service('/gazebo/spawn_sdf_model')
-    try:
-        spawn_brick29 = rospy.ServiceProxy('/gazebo/spawn_sdf_model', SpawnModel)
-        resp_brick29 = spawn_sdf("brick29", brick29_xml, "/",
-                               brick29_pose, brick29_reference_frame)
-    except rospy.ServiceException, e:
-        rospy.logerr("Spawn SDF service call failed: {0}".format(e))
-    # Spawn Brick30 SDF
-    rospy.wait_for_service('/gazebo/spawn_sdf_model')
-    try:
-        spawn_brick30 = rospy.ServiceProxy('/gazebo/spawn_sdf_model', SpawnModel)
-        resp_brick30 = spawn_sdf("brick30", brick30_xml, "/",
-                               brick30_pose, brick30_reference_frame)
-    except rospy.ServiceException, e:
-        rospy.logerr("Spawn SDF service call failed: {0}".format(e))
+    # rospy.wait_for_service('/gazebo/spawn_sdf_model')
+    # try:
+    #     spawn_brick29 = rospy.ServiceProxy('/gazebo/spawn_sdf_model', SpawnModel)
+    #     resp_brick29 = spawn_sdf("brick29", brick29_xml, "/",
+    #                            brick29_pose, brick29_reference_frame)
+    # except rospy.ServiceException, e:
+    #     rospy.logerr("Spawn SDF service call failed: {0}".format(e))
+    # # Spawn Brick30 SDF
+    # rospy.wait_for_service('/gazebo/spawn_sdf_model')
+    # try:
+    #     spawn_brick30 = rospy.ServiceProxy('/gazebo/spawn_sdf_model', SpawnModel)
+    #     resp_brick30 = spawn_sdf("brick30", brick30_xml, "/",
+    #                            brick30_pose, brick30_reference_frame)
+    # except rospy.ServiceException, e:
+    #     rospy.logerr("Spawn SDF service call failed: {0}".format(e))
 
 
 def delete_gazebo_models():
@@ -726,24 +726,26 @@ class myThread (threading.Thread):
 
 # Pick and place functions to go into multithreading 
 
-def pick_and_place_left_threaded ():
+def pick_and_place_left_threaded (): # Minute hand
     global idx
     global pnp
     global block_poses
     Display = "00"
     while not rospy.is_shutdown():
-      Time = time.ctime()[11:13]
+      # Time = time.ctime()[14:16]
+      Time = "26" # to test
       if Time != Display: 
         Display = Time_change(LEFT, Display,Time) 
     return 0
 
-def pick_and_place_right_threaded ():
+def pick_and_place_right_threaded (): # Hour hand
     global idxR
     global pnpR
     global block_posesR
     Display = "00"
     while not rospy.is_shutdown():
-      Time = time.ctime()[14:16]
+      # Time = time.ctime()[11:13]
+      Time = "22" # to test
       if Time != Display: 
         Display = Time_change(RIGHT, Display,Time)
     return 0
@@ -765,10 +767,10 @@ def move_brick (side, brick_position, pickUp):
             block_poses.append(Pose(
                 position=Point(x=(BrickPlaces[brick_position][0]*0.001), y=(BrickPlaces[brick_position][1]*0.001), z=0.05),        
                 orientation=Quaternion(x=overhead_orientation2[0],y=overhead_orientation2[1],z=overhead_orientation2[2],w=overhead_orientation2[3])))               
-#         if pickUp:
-#           pnp.pick(block_poses[-1])
-#         else:
-#           pnp.place(block_poses[-1])
+        if pickUp:
+          pnp.pick(block_poses[-1])
+        else:
+          pnp.place(block_poses[-1])
     else:
         print ("add brick RIGHT, brick_position: " + str(brick_position) + " " + ("picking" if pickUp else "placing"))
         if BrickPlaces[brick_position][2] == 0:
@@ -779,10 +781,10 @@ def move_brick (side, brick_position, pickUp):
             block_posesR.append(Pose(
                 position=Point(x=(BrickPlaces[brick_position][0]*0.001), y=(BrickPlaces[brick_position][1]*0.001), z=0.05),        
                 orientation=Quaternion(x=overhead_orientation2[0],y=overhead_orientation2[1],z=overhead_orientation2[2],w=overhead_orientation2[3])))   
-#         if pickUp:
-#           pnpR.pick(block_posesR[-1])
-#         else:
-#           pnpR.place(block_posesR[-1])
+        if pickUp:
+          pnpR.pick(block_posesR[-1])
+        else:
+          pnpR.place(block_posesR[-1])
 
 
 def change_bricks (side, BricksIncoming,BricksOutgoing,Hstore,Mstore,Digit):
@@ -793,7 +795,7 @@ def change_bricks (side, BricksIncoming,BricksOutgoing,Hstore,Mstore,Digit):
 
     Store = Mstore
     StorePrefix = 'MS'
-    if side == LEFT:
+    if side == RIGHT:
         Store = Hstore
         StorePrefix = 'HS'
         Digit += 2
@@ -815,12 +817,12 @@ def change_bricks (side, BricksIncoming,BricksOutgoing,Hstore,Mstore,Digit):
     #While want to get rid of bricks
     while BricksOutgoing != []: 
         brick_position = PrefixList[Digit]+str(BricksOutgoing.pop())  #Pick Brick to go
-        move_brick(side, brick_position, PICKUP)        
+        move_brick(side, brick_position, PICKUP)
         Store += 1
         brick_position = StorePrefix+str(Store) #Put it in storage
         move_brick(side, brick_position, PUTDOWN)
         #Put it in the store
-    if side == LEFT:
+    if side == RIGHT:
         return (Store, Mstore)
     else:
         return (Hstore, Store)
@@ -845,7 +847,7 @@ def initial_bricks():
                 'HA0':(412.5,-590,1),
                 'HA1':(510.0,-447.5,0),
                 'HA2':(720.0,-447.5,0),
-                'HA3':(717.5,-590,1),
+                'HA3':(817.5,-590,1),
                 'HA4':(720,-732.5,0),
                 'HA5':(510,-732.5,0),
                 'HA6':(605,-590,1),
@@ -853,7 +855,7 @@ def initial_bricks():
                 'HB0':(512.5,-200,1),
                 'HB1':(610,-57.5,0),
                 'HB2':(820,-57.5,0),
-                'HB3':(817.5,-200,1),
+                'HB3':(917.5,-200,1),
                 'HB4':(820,-342.5,0),
                 'HB5':(610,-342.5,0),
                 'HB6':(705,-200,1),
@@ -871,7 +873,7 @@ def initial_bricks():
                 'MA0':(512.5,200,1),
                 'MA1':(610,342.5,0),
                 'MA2':(820,342.5,0),
-                'MA3':(817.5,200,1),
+                'MA3':(917.5,200,1),
                 'MA4':(820,57.5,0),
                 'MA5':(610,57.5,0),
                 'MA6':(705,200,1),
@@ -879,7 +881,7 @@ def initial_bricks():
                 'MB0':(412.5,590,1),
                 'MB1':(510,732.5,0),
                 'MB2':(720,732.5,0),
-                'MB3':(717.5,590,1),
+                'MB3':(817.5,590,1),
                 'MB4':(720,447.5,0),
                 'MB5':(510,447.5,0),
                 'MB6':(605,590,1),
@@ -1014,6 +1016,7 @@ def main():
                              'left_s0': 0.75142667,
                              'left_s1': -1.08935144}
     pnp = PickAndPlace(limb, hover_distance)
+    print ("Left limb picking up")
     # An orientation for gripper fingers to be overhead and parallel to the obj
     overhead_orientation = Quaternion(
                              x=-0.0249590815779,
@@ -1056,6 +1059,7 @@ def main():
                              'right_s1': -1.6393228}
 
     pnpR = PickAndPlace(limbR, hover_distance)
+    print ("Right limb picking up")
     # An orientation for gripper fingers to be overhead and parallel to the obj
 
     #####################
