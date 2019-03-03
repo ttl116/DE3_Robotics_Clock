@@ -79,7 +79,7 @@ PUTDOWN = False
 
 
 class PickAndPlace(object):
-    def __init__(self, limb, hover_distance = 0.2, verbose=True):
+    def __init__(self, limb, hover_distance = 0.25, verbose=True):
         self._limb_name = limb # string
         self._hover_distance = hover_distance # in meters
         self._verbose = verbose # bool
@@ -1006,7 +1006,7 @@ def main():
     rospy.wait_for_message("/robot/sim/started", Empty)
 
     limb = 'left'
-    hover_distance = 0.2 # meters
+    hover_distance = 0.25 # meters
     # Starting Joint angles for left arm
     starting_joint_angles = {'left_w0': 0.50139,
                              'left_w1': 1.40508,
@@ -1048,7 +1048,7 @@ def main():
     #print(type(overhead3))
 
     limbR = 'right'
-    hover_distance = 0.15 # meters
+    hover_distance = 0.25 # meters
     # Starting Joint angles for right arm
     starting_joint_anglesR = {'right_w0': 0.0164238,
                              'right_w1': 1.17581551,
