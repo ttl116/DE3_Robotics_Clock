@@ -1045,7 +1045,7 @@ def main():
     #print(type(overhead3))
 
     limbR = 'right'
-    hover_distance = 0.15 # meters
+    hover_distance = 0.18 # meters
     # Starting Joint angles for right arm
     starting_joint_anglesR = {'right_w0': 0.0164238,
                              'right_w1': 1.17581551,
