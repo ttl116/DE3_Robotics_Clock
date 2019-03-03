@@ -645,7 +645,7 @@ def load_gazebo_models(table_pose=Pose(position=Point(x=1.35, y=-0.09, z=-0.1)),
     #                            brick28_pose, brick28_reference_frame)
     # except rospy.ServiceException, e:
     #     rospy.logerr("Spawn SDF service call failed: {0}".format(e))
-    # Spawn Brick29 SDF
+    Spawn Brick29 SDF
     rospy.wait_for_service('/gazebo/spawn_sdf_model')
     try:
         spawn_brick29 = rospy.ServiceProxy('/gazebo/spawn_sdf_model', SpawnModel)
@@ -653,7 +653,7 @@ def load_gazebo_models(table_pose=Pose(position=Point(x=1.35, y=-0.09, z=-0.1)),
                                brick29_pose, brick29_reference_frame)
     except rospy.ServiceException, e:
         rospy.logerr("Spawn SDF service call failed: {0}".format(e))
-    # Spawn Brick30 SDF
+    Spawn Brick30 SDF
     rospy.wait_for_service('/gazebo/spawn_sdf_model')
     try:
         spawn_brick30 = rospy.ServiceProxy('/gazebo/spawn_sdf_model', SpawnModel)
