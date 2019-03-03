@@ -765,10 +765,10 @@ def move_brick (side, brick_position, pickUp):
             block_poses.append(Pose(
                 position=Point(x=(BrickPlaces[brick_position][0]*0.001), y=(BrickPlaces[brick_position][1]*0.001), z=0.05),        
                 orientation=Quaternion(x=overhead_orientation2[0],y=overhead_orientation2[1],z=overhead_orientation2[2],w=overhead_orientation2[3])))               
-        if pickUp:
-          pnp.pick(block_poses[-1])
-        else:
-          pnp.place(block_poses[-1])
+#         if pickUp:
+#           pnp.pick(block_poses[-1])
+#         else:
+#           pnp.place(block_poses[-1])
     else:
         print ("add brick RIGHT, brick_position: " + str(brick_position) + " " + ("picking" if pickUp else "placing"))
         if BrickPlaces[brick_position][2] == 0:
@@ -779,10 +779,10 @@ def move_brick (side, brick_position, pickUp):
             block_posesR.append(Pose(
                 position=Point(x=(BrickPlaces[brick_position][0]*0.001), y=(BrickPlaces[brick_position][1]*0.001), z=0.05),        
                 orientation=Quaternion(x=overhead_orientation2[0],y=overhead_orientation2[1],z=overhead_orientation2[2],w=overhead_orientation2[3])))   
-        if pickUp:
-          pnpR.pick(block_posesR[-1])
-        else:
-          pnpR.place(block_posesR[-1])
+#         if pickUp:
+#           pnpR.pick(block_posesR[-1])
+#         else:
+#           pnpR.place(block_posesR[-1])
 
 
 def change_bricks (side, BricksIncoming,BricksOutgoing,Hstore,Mstore,Digit):
