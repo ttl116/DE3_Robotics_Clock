@@ -646,21 +646,21 @@ def load_gazebo_models(table_pose=Pose(position=Point(x=1.35, y=-0.09, z=-0.1)),
     # except rospy.ServiceException, e:
     #     rospy.logerr("Spawn SDF service call failed: {0}".format(e))
     # Spawn Brick29 SDF
-    # rospy.wait_for_service('/gazebo/spawn_sdf_model')
-    # try:
-    #     spawn_brick29 = rospy.ServiceProxy('/gazebo/spawn_sdf_model', SpawnModel)
-    #     resp_brick29 = spawn_sdf("brick29", brick29_xml, "/",
-    #                            brick29_pose, brick29_reference_frame)
-    # except rospy.ServiceException, e:
-    #     rospy.logerr("Spawn SDF service call failed: {0}".format(e))
+    rospy.wait_for_service('/gazebo/spawn_sdf_model')
+    try:
+        spawn_brick29 = rospy.ServiceProxy('/gazebo/spawn_sdf_model', SpawnModel)
+        resp_brick29 = spawn_sdf("brick29", brick29_xml, "/",
+                               brick29_pose, brick29_reference_frame)
+    except rospy.ServiceException, e:
+        rospy.logerr("Spawn SDF service call failed: {0}".format(e))
     # # Spawn Brick30 SDF
-    # rospy.wait_for_service('/gazebo/spawn_sdf_model')
-    # try:
-    #     spawn_brick30 = rospy.ServiceProxy('/gazebo/spawn_sdf_model', SpawnModel)
-    #     resp_brick30 = spawn_sdf("brick30", brick30_xml, "/",
-    #                            brick30_pose, brick30_reference_frame)
-    # except rospy.ServiceException, e:
-    #     rospy.logerr("Spawn SDF service call failed: {0}".format(e))
+    rospy.wait_for_service('/gazebo/spawn_sdf_model')
+    try:
+        spawn_brick30 = rospy.ServiceProxy('/gazebo/spawn_sdf_model', SpawnModel)
+        resp_brick30 = spawn_sdf("brick30", brick30_xml, "/",
+                               brick30_pose, brick30_reference_frame)
+    except rospy.ServiceException, e:
+        rospy.logerr("Spawn SDF service call failed: {0}".format(e))
 
 
 def delete_gazebo_models():
@@ -733,7 +733,7 @@ def pick_and_place_left_threaded (): # Minute hand
     Display = "00"
     while not rospy.is_shutdown():
       # Time = time.ctime()[14:16]
-      Time = "26" # to test
+      Time = "57" # to test
       if Time != Display: 
         Display = Time_change(LEFT, Display,Time) 
     return 0
@@ -745,7 +745,7 @@ def pick_and_place_right_threaded (): # Hour hand
     Display = "00"
     while not rospy.is_shutdown():
       # Time = time.ctime()[11:13]
-      Time = "22" # to test
+      Time = "12" # to test
       if Time != Display: 
         Display = Time_change(RIGHT, Display,Time)
     return 0
@@ -979,12 +979,10 @@ def main():
     global overhead_orientation2
     global overhead_orientation3
     """RSDK Inverse Kinematics Pick and Place Example
-
     A Pick and Place example using the Rethink Inverse Kinematics
     Service which returns the joint angles a requested Cartesian Pose.
     This ROS Service client is used to request both pick and place
     poses in the /base frame of the robot.
-
     Note: This is a highly scripted and tuned demo. The object location
     is "known" and movement is done completely open loop. It is expected
     behavior that Baxter will eventually mis-pick or drop the block. You
@@ -992,13 +990,7 @@ def main():
     the loop.
     """
     rospy.init_node("ik_pick_and_place_demo")
-    # Load Gazebo Models via Spawning Services
-    # Note that the models reference is the /world frame
-    # and the IK operates with respect to the /base frame
-    print("Initialising Bricks")
-    initial_bricks ()
-    print("Loading Gazebo Models")
-    load_gazebo_models()
+
     # Remove models from the scene on shutdown
     rospy.on_shutdown(delete_gazebo_models)
 
@@ -1082,6 +1074,14 @@ def main():
     pnp.move_to_start(starting_joint_angles)
     pnpR.move_to_start(starting_joint_anglesR)
 
+    # Load Gazebo Models via Spawning Services
+    # Note that the models reference is the /world frame
+    # and the IK operates with respect to the /base frame
+    print("Initialising Bricks")
+    initial_bricks ()
+    print("Loading Gazebo Models")
+    load_gazebo_models()
+
     #Create 2 seperate indexes
     idx = 0
     idxR = 0
@@ -1104,4 +1104,4 @@ def main():
     print ("Exiting Main Thread")
 
 if __name__ == '__main__':
-    sys.exit(main())
+	sys.exit(main())
