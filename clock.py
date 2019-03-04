@@ -280,9 +280,9 @@ def load_gazebo_models(table_pose=Pose(position=Point(x=1.35, y=-0.09, z=-0.1)),
                        brick27_reference_frame="world",
                        # brick28_pose=Pose(position=Point(x=0.6050, y=0.5900, z=0.7),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 28 MB6
                        # brick28_reference_frame="world",
-                       brick29_pose=Pose(position=Point(x=0.220, y=0.5975, z=0.7)), # brick 29 MS0
+                       brick29_pose=Pose(position=Point(x=0.220, y=0.6475, z=0.7)), # brick 29 MS0
                        brick29_reference_frame="world",
-                       brick30_pose=Pose(position=Point(x=0.220, y=0.7025, z=0.7)), # brick 30 MS1
+                       brick30_pose=Pose(position=Point(x=0.220, y=0.7525, z=0.7)), # brick 30 MS1
                        brick30_reference_frame="world",):
 
     # Get Models' Path
@@ -859,16 +859,18 @@ def initial_bricks():
                 'HB4':(820,-342.5,0),
                 'HB5':(610,-342.5,0),
                 'HB6':(705,-200,1),
-                #Hour Digit Store
-                'HS0':(220,-497.5,0),
-                'HS1':(220,-602.5,0),
-                'HS2':(220,-707.5,0),
-                'HS3':(220,-812.5,0),
-                'HS4':(220,-917.5,0),
-                'HS5':(10,-497.5,0),
-                'HS6':(10,-602.5,0),
-                'HS7':(10,-707.5,0),
-                'HS8':(10,-812.5,0),
+               
+                 #Hour Digit Store
+                'HS0':(220,-547.5,0),
+                'HS1':(220,-652.5,0),
+                'HS2':(220,-757.5,0),
+                'HS3':(220,-862.5,0),
+                'HS4':(220,-967.5,0),
+                'HS5':(10,-547.5,0),
+                'HS6':(10,-652.5,0),
+                'HS7':(10,-757.5,0),
+                'HS8':(10,-862.5,0),
+      
                 #Minute Digit 1
                 'MA0':(512.5,200,1),
                 'MA1':(610,342.5,0),
@@ -885,16 +887,17 @@ def initial_bricks():
                 'MB4':(720,447.5,0),
                 'MB5':(510,447.5,0),
                 'MB6':(605,590,1),
+                
                 #Minute Digit Store
-                'MS0':(220,597.5,0),
-                'MS1':(220,702.5,0),
-                'MS2':(220,807.5,0),
-                'MS3':(220,912.5,0),
-                'MS4':(220,1017.5,0),
-                'MS5':(10,597.5,0),
-                'MS6':(10,702.5,0),
-                'MS7':(10,807.5,0),
-                'MS8':(10,912.5,0)}
+                'MS0':(220,647.5,0),
+                'MS1':(220,752.5,0),
+                'MS2':(220,857.5,0),
+                'MS3':(220,962.5,0),
+                'MS4':(220,1067.5,0),
+                'MS5':(10,647.5,0),
+                'MS6':(10,752.5,0),
+                'MS7':(10,857.5,0),
+                'MS8':(10,962.5,0)}
 
 #'FromTo':((To Go),(To Come))
     SwapDictionary = {'00':([],[]),     #<------This has been added since last test. Please make sure it is in the code.
