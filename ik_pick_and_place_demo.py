@@ -223,66 +223,66 @@ class PickAndPlace(object):
 def load_gazebo_models(table_pose=Pose(position=Point(x=1.35, y=-0.09, z=-0.1)),
                        table_reference_frame="world",
                        # Hour Hand
-                       brick1_pose=Pose(position=Point(x=0.4125, y=-0.6150, z=0.71),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 1 HA0
+                       brick1_pose=Pose(position=Point(x=0.4125, y=-0.590, z=0.7),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 1 HA0
                        brick1_reference_frame="world",
-                       brick2_pose=Pose(position=Point(x=0.510, y=-0.4725, z=0.71)), # brick 2 HA1
+                       brick2_pose=Pose(position=Point(x=0.510, y=-0.4475, z=0.7)), # brick 2 HA1
                        brick2_reference_frame="world",
-                       brick3_pose=Pose(position=Point(x=0.720, y=-0.4725, z=0.71)), # brick 3 HA2
+                       brick3_pose=Pose(position=Point(x=0.720, y=-0.4475, z=0.7)), # brick 3 HA2
                        brick3_reference_frame="world",
-                       brick4_pose=Pose(position=Point(x=0.8175, y=-0.6150, z=0.71),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 4 HA3
+                       brick4_pose=Pose(position=Point(x=0.7875, y=-0.590, z=0.7),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 4 HA3
                        brick4_reference_frame="world",
-                       brick5_pose=Pose(position=Point(x=0.720, y=-0.7575, z=0.71)), # brick 5 HA4
+                       brick5_pose=Pose(position=Point(x=0.720, y=-0.7325, z=0.7)), # brick 5 HA4
                        brick5_reference_frame="world",
-                       brick6_pose=Pose(position=Point(x=0.510, y=-0.7575, z=0.71)), # brick 6 HA5
+                       brick6_pose=Pose(position=Point(x=0.510, y=-0.7325, z=0.7)), # brick 6 HA5
                        brick6_reference_frame="world",
                        # brick7_pose=Pose(position=Point(x=0.6050, y=-0.59, z=0.7),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 7 HA6
                        # brick7_reference_frame="world",
-                       brick8_pose=Pose(position=Point(x=0.5125, y=-0.2250, z=0.71),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 8 HB0
+                       brick8_pose=Pose(position=Point(x=0.5125, y=-0.200, z=0.7),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 8 HB0
                        brick8_reference_frame="world",
-                       brick9_pose=Pose(position=Point(x=0.6100, y=-0.0825, z=0.71)), # brick 9 HB1
+                       brick9_pose=Pose(position=Point(x=0.6100, y=-0.0575, z=0.7)), # brick 9 HB1
                        brick9_reference_frame="world",
-                       brick10_pose=Pose(position=Point(x=0.820, y=-0.0825, z=0.71),), # brick 10 HB2
+                       brick10_pose=Pose(position=Point(x=0.820, y=-0.0575, z=0.7),), # brick 10 HB2
                        brick10_reference_frame="world",
-                       brick11_pose=Pose(position=Point(x=0.9175, y=-0.2250, z=0.71),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 11 HB3
+                       brick11_pose=Pose(position=Point(x=0.8575, y=-0.200, z=0.7),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 11 HB3
                        brick11_reference_frame="world",
-                       brick12_pose=Pose(position=Point(x=0.8200, y=-0.3675, z=0.71)), # brick 12 HB4
+                       brick12_pose=Pose(position=Point(x=0.8200, y=-0.3425, z=0.7)), # brick 12 HB4
                        brick12_reference_frame="world",
-                       brick13_pose=Pose(position=Point(x=0.6100, y=-0.3675, z=0.71)), # brick 13 HB5
+                       brick13_pose=Pose(position=Point(x=0.6100, y=-0.3425, z=0.7)), # brick 13 HB5
                        brick13_reference_frame="world",
                        # brick14_pose=Pose(position=Point(x=0.7050, y=-0.2000, z=0.7),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 14 HB6
                        # brick14_reference_frame="world",
                        # Minute Hand
-                       brick15_pose=Pose(position=Point(x=0.5125, y=0.200, z=0.71),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 15 MA0
+                       brick15_pose=Pose(position=Point(x=0.5125, y=0.200, z=0.7),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 15 MA0
                        brick15_reference_frame="world",
-                       brick16_pose=Pose(position=Point(x=0.6100, y=0.3425, z=0.71)), # brick 16 MA1
+                       brick16_pose=Pose(position=Point(x=0.6100, y=0.3425, z=0.7)), # brick 16 MA1
                        brick16_reference_frame="world",
-                       brick17_pose=Pose(position=Point(x=0.820, y=0.3425, z=0.71)), # brick 17 MA2
+                       brick17_pose=Pose(position=Point(x=0.820, y=0.3425, z=0.7)), # brick 17 MA2
                        brick17_reference_frame="world",
-                       brick18_pose=Pose(position=Point(x=0.9175, y=0.200, z=0.71),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 18 MA3
+                       brick18_pose=Pose(position=Point(x=0.8575, y=0.200, z=0.7),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 18 MA3
                        brick18_reference_frame="world",
-                       brick19_pose=Pose(position=Point(x=0.8200, y=0.05750, z=0.71)), # brick 19 MA4
+                       brick19_pose=Pose(position=Point(x=0.8200, y=0.05750, z=0.7)), # brick 19 MA4
                        brick19_reference_frame="world",
-                       brick20_pose=Pose(position=Point(x=0.6100, y=0.0575, z=0.71)), # brick 20 MA5
+                       brick20_pose=Pose(position=Point(x=0.6100, y=0.0575, z=0.7)), # brick 20 MA5
                        brick20_reference_frame="world",
                        # brick21_pose=Pose(position=Point(x=0.7050, y=0.2000, z=0.7),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 21 MA6
                        # brick21_reference_frame="world",
-                       brick22_pose=Pose(position=Point(x=0.4125, y=0.590, z=0.71),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 22 MB0
+                       brick22_pose=Pose(position=Point(x=0.4125, y=0.590, z=0.7),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 22 MB0
                        brick22_reference_frame="world",
-                       brick23_pose=Pose(position=Point(x=0.5100, y=0.7325, z=0.71)), # brick 23 MB1
+                       brick23_pose=Pose(position=Point(x=0.5100, y=0.7325, z=0.7)), # brick 23 MB1
                        brick23_reference_frame="world",
-                       brick24_pose=Pose(position=Point(x=0.7200, y=0.7325, z=0.71)), # brick 24 MB2
+                       brick24_pose=Pose(position=Point(x=0.7200, y=0.7325, z=0.7)), # brick 24 MB2
                        brick24_reference_frame="world",
-                       brick25_pose=Pose(position=Point(x=0.8175, y=0.5900, z=0.71),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 25 MB3
+                       brick25_pose=Pose(position=Point(x=0.7875, y=0.5900, z=0.7),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 25 MB3
                        brick25_reference_frame="world",
-                       brick26_pose=Pose(position=Point(x=0.7200, y=0.4475, z=0.71)), # brick 26 MB4
+                       brick26_pose=Pose(position=Point(x=0.7200, y=0.4475, z=0.7)), # brick 26 MB4
                        brick26_reference_frame="world",
-                       brick27_pose=Pose(position=Point(x=0.5100, y=0.4475, z=0.71)), # brick 27 MB5
+                       brick27_pose=Pose(position=Point(x=0.5100, y=0.4475, z=0.7)), # brick 27 MB5
                        brick27_reference_frame="world",
                        # brick28_pose=Pose(position=Point(x=0.6050, y=0.5900, z=0.7),orientation=Quaternion(x=0, y=0, z=0.70738827, w=0.70738827)), # brick 28 MB6
                        # brick28_reference_frame="world",
-                       brick29_pose=Pose(position=Point(x=0.220, y=0.5975, z=0.71)), # brick 29 MS0
+                       brick29_pose=Pose(position=Point(x=0.220, y=0.5975, z=0.7)), # brick 29 MS0
                        brick29_reference_frame="world",
-                       brick30_pose=Pose(position=Point(x=0.220, y=0.7025, z=0.71)), # brick 30 MS1
+                       brick30_pose=Pose(position=Point(x=0.220, y=0.7025, z=0.7)), # brick 30 MS1
                        brick30_reference_frame="world",):
 
     # Get Models' Path
@@ -828,7 +828,6 @@ def change_bricks (side, BricksIncoming,BricksOutgoing,Hstore,Mstore,Digit):
         return (Hstore, Store)
 
 
-
 #------------------------------------------------------------------------
 def initial_bricks():
     global BrickPlaces
@@ -847,18 +846,18 @@ def initial_bricks():
                 'HA0':(412.5,-590,1),
                 'HA1':(510.0,-447.5,0),
                 'HA2':(720.0,-447.5,0),
-                'HA3':(817.5,-590,1),
-                'HA4':(720,-732.5,0),
-                'HA5':(510,-732.5,0),
+                'HA3':(787.5,-590,1),
+                'HA4':(720,-747.5,0),
+                'HA5':(510,-747.5,0),
                 'HA6':(605,-590,1),
                 #Hour Digit 2
-                'HB0':(512.5,-200,1),
-                'HB1':(610,-57.5,0),
-                'HB2':(820,-57.5,0),
-                'HB3':(917.5,-200,1),
-                'HB4':(820,-342.5,0),
-                'HB5':(610,-342.5,0),
-                'HB6':(705,-200,1),
+                'HB0':(512.5,-185,1),
+                'HB1':(610,-42.5,0),
+                'HB2':(820,-42.5,0),
+                'HB3':(857.5,-185.0,1),
+                'HB4':(820,-327.5,0),
+                'HB5':(610,-327.5,0),
+                'HB6':(705,-185,1),
                 #Hour Digit Store
                 'HS0':(220,-497.5,0),
                 'HS1':(220,-602.5,0),
@@ -873,7 +872,7 @@ def initial_bricks():
                 'MA0':(512.5,200,1),
                 'MA1':(610,342.5,0),
                 'MA2':(820,342.5,0),
-                'MA3':(917.5,200,1),
+                'MA3':(857.5,200,1),
                 'MA4':(820,57.5,0),
                 'MA5':(610,57.5,0),
                 'MA6':(705,200,1),
@@ -881,9 +880,9 @@ def initial_bricks():
                 'MB0':(412.5,590,1),
                 'MB1':(510,732.5,0),
                 'MB2':(720,732.5,0),
-                'MB3':(817.5,590,1),
-                'MB4':(720,447.5,0),
-                'MB5':(510,447.5,0),
+                'MB3':(787.5,590,1),
+                'MB4':(720,465.5,0),
+                'MB5':(510,465.5,0),
                 'MB6':(605,590,1),
                 #Minute Digit Store
                 'MS0':(220,597.5,0),
@@ -1040,7 +1039,7 @@ def main():
     #print(type(overhead3))
 
     limbR = 'right'
-    hover_distance = 0.15 # meters
+    hover_distance = 0.2 # meters
     # Starting Joint angles for right arm
     starting_joint_anglesR = {'right_w0': 0.0164238,
                              'right_w1': 1.17581551,
