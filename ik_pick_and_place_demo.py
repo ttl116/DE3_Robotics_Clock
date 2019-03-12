@@ -273,6 +273,7 @@ class PickAndPlace(object):
 
 #---------------------------------------------------------------------------------
 #Loading Models
+'''
 
 def load_gazebo_models(table_pose=Pose(position=Point(x=1.35, y=-0.09, z=-0.1)),
                        table_reference_frame="world",
@@ -760,7 +761,7 @@ def delete_gazebo_models():
         resp_delete = delete_model("brick30")
     except rospy.ServiceException, e:
         rospy.loginfo("Delete Model service call failed: {0}".format(e))
-
+'''
 
 #------------------------------------------------------------------------------------------
 ## Multithreading class
@@ -952,29 +953,16 @@ def initial_bricks():
                 'MS7':(10,807.5,0),
                 'MS8':(10,912.5,0)}
 
-#'FromTo':((To Go),(To Come))
-    SwapDictionary = {'00':([],[]),     #<------This has been added since last test. Please make sure it is in the code.
-                  '01':([0,3,4,5],[]),
-                  '02':([2,5],[6]),
-                  '03':([4,5],[6]),
-                  '04':([0,3,5],[6]),
-                  '05':([1,4],[6]),
-                  '06':([1],[6]),
-                  '07':([3,4,5],[]),
-                  '08':([],[6]),
-                  '09':([4],[6]),
-                  '12':([2],[0,3,4,6]),
-                  '23':([4],[2]),
-                  '34':([0,3],[5]),
-                  '45':([1],[0,3]),
-                  '56':([],[4]),
-                  '67':([3,4,5,6],[1]),
-                  '78':([],[3,4,5,6]),
-                  '89':([4],[]),
-                  '90':([6],[4]),
-                  '20':([6],[2,5]),
-                  '30':([6],[4,5]),
-                  '50':([6],[1,4])}
+    Numbers = {'0':(0,1,2,3,4,5),    
+           '1':(1,2),
+                  '2':(0,1,3,4,6),
+                  '3':(0,1,2,3,6),
+                  '4':(1,2,5,6),
+                  '5':(0,2,3,5,6),
+                  '6':(0,2,3,4,5,6),
+                  '7':(0,1,2),
+                  '8':(0,1,2,3,4,5,6),
+                  '9':(0,1,2,3,5,6)}
 
     print ("Initialised PrefixList")
 
@@ -991,40 +979,43 @@ def initial_bricks():
     Hstore = 1 #How many bricks do we have in the store (Hour)
 
     Mstore = 1 #How many bricks do we have in the store (Minute)
-
-def string_change (side, SwapString):
-  print ("string_change SwapString: " + str(SwapString))
-  global SwapDictionary
-  global Hstore
-  global Mstore
-  Digit = 0
-  while SwapString != []:
-      swap = SwapString.pop()
-      print ("string_change swap: " + str(swap))
-      come = list(SwapDictionary[swap][1])
-      go = list(SwapDictionary[swap][0])
-      Hstore, Mstore = change_bricks (side, come,go,Hstore,Mstore,Digit)
-      Digit += 1
+      
+def string_change (SwapString):
+    print ("string_change SwapString: " + str(SwapString))
+    global SwapDictionary
+    global Hstore
+    global Mstore    
+    Digit = 0
+    while SwapString != []:
+        swap1 = SwapString.pop()
+        swap2 = SwapString.pop()
+        come = list(set(Numbers[swap1]) - set(Numbers[swap2]))
+        go = list(set(Numbers[swap2]) - set(Numbers[swap1]))
+        #print (go, come)
+        change_bricks (come,go,Hstore,Mstore,Digit)
+        Digit += 1
       print("Hstore, Mstore: " + str(Hstore) + ", " + str(Mstore))
 
-def Time_change (side, display, time):
-  print ("Time_change display: " + str(display) + " Time: " + str(time))
-  String = []
-  Dis = list(display)
-  Tim = list(time)
-  while Dis != []:
-      D = Dis.pop(0)
-      T = Tim.pop(0)
-      if D != T:
-          String.append(D+T)
-          while Dis != []:
-              D = Dis.pop(0)
-              T = Tim.pop(0)
-              String.append(D+T)
-  string_change (side, String)
-  display = time
-  return display
-
+def Time_change (Display, Time):
+    print ("Time_change display: " + str(display) + " Time: " + str(time))
+    String = []
+    Dis = list(Display)
+    Tim = list(Time)
+    while Dis != []:
+        D = Dis.pop(0)
+        T = Tim.pop(0)
+        if D != T:
+            String.append(D)
+            String.append(T)
+            while Dis != []:
+                D = Dis.pop(0)
+                T = Tim.pop(0)
+                String.append(D)
+                String.append(T)
+    Display = Time
+    #print(String)
+    string_change (String)
+    
 
 def main():
     global pnp
